@@ -1,0 +1,22 @@
+
+.home-header.data-v-df265f9e{
+	/* background-color: rgba(0,0,0,.1); */
+	height: auto;
+}
+.home-header .left.data-v-df265f9e{
+	width: 80px;
+	position: relative;
+}
+.home-header .m-tabs.data-v-df265f9e{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+}
+.home-header .right.data-v-df265f9e{
+	width: 80px;
+}
+
+
+
+
+

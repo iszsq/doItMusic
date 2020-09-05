@@ -1,0 +1,25 @@
+
+.avatar-box.data-v-01af42d1{
+	padding: 20px;
+	background-color: #fff;
+}
+.avatar-box .user-name.data-v-01af42d1{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	padding: 0 20px;
+}
+.user-grid.data-v-01af42d1{
+}
+.user-grid .m-text.data-v-01af42d1{
+	font-size: 16rpx;
+	margin-top: 8rpx;
+}
+.bottom-box.data-v-01af42d1{
+	width: 100%;
+	height: 100rpx;
+	position: fixed;
+	bottom: -3px;
+	left: 0;
+}
+

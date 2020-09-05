@@ -1,0 +1,85 @@
+
+.vertical-roll-box.data-v-fb25b5fa{
+	color: #fff;
+}
+.vertical-roll-box .roll-list.data-v-fb25b5fa{
+	width: 100%;
+	color: #fff;
+	position: absolute;
+	bottom: 0rpx;
+	left: 0;
+	letter-spacing: 2rpx;
+	z-index: 999;
+	box-sizing: border-box;
+	padding: 24rpx 48rpx;
+}
+.vertical-roll-box .roll-list .roll-list-item.data-v-fb25b5fa{
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	padding: 8rpx 16rpx 8rpx  8rpx;
+	border-radius: 24rpx;
+	background-color: rgba(0,0,0,.1);
+	white-space: nowrap;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	margin-bottom: 10rpx;
+}
+.vertical-roll-box .roll-list .roll-list-item .content-box.data-v-fb25b5fa{
+	width: 0;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+}
+.vertical-roll-box .roll-list .roll-list-item .content.data-v-fb25b5fa{
+	font-size: 26rpx;
+	margin-left: 14rpx;
+}
+.vertical-roll-box .swiper-item .item-full-bg .bg-image.data-v-fb25b5fa{
+	-webkit-filter: blur(50px);
+	        filter: blur(50px);
+	opacity: .7;
+}
+.count.data-v-fb25b5fa{
+	position: absolute;
+	top: 110rpx;
+	right: 48rpx;
+	letter-spacing: 2rpx;
+}
+.vertical-roll-box .swiper-item .content-box.data-v-fb25b5fa{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 180rpx;
+	left: 0;
+	padding: 0 48rpx;
+	box-sizing: border-box;
+}
+.vertical-roll-box .swiper-item .content-box .symbol.data-v-fb25b5fa{
+	font: italic 90rpx Georgia, "Times New Roman", Times, serif;
+}
+.vertical-roll-box .swiper-item .content-box .content.data-v-fb25b5fa{
+	letter-spacing: 4rpx;
+	font-size: 32rpx;
+	line-height: 55rpx;
+	font-weight: 600;
+}
+.vertical-roll-box .swiper-item .content-box .user-info.data-v-fb25b5fa{
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	margin-bottom: 48rpx;
+}
+.vertical-roll-box .swiper-item .content-box .user-info .nick-name.data-v-fb25b5fa{
+	margin-left: 20rpx;
+}
+.vertical-roll-box .swiper-item .content-box .song-info.data-v-fb25b5fa{
+	margin-top: 24rpx;
+	font-size: 24rpx;
+	color: #ddd;
+}
+

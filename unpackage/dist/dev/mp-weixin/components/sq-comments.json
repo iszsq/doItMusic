@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "sq-comment-item": "/components/sq-comment-item"
+  },
+  "component": true
+}

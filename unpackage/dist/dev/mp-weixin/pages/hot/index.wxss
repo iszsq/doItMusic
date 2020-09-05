@@ -1,0 +1,115 @@
+
+.banner-box{
+	padding: 24rpx;
+	border-radius: 20rpx;
+}
+.hot-page-box{
+	background-color: #fff;
+	padding-bottom: 50rpx;
+}
+.common-card {
+	background-color: #fff;
+	padding: 20rpx;
+	margin-top: 40rpx;
+}
+.common-card .title-box{
+	margin-bottom: 24rpx;
+}
+.common-card .title-box .sub-title{
+	font-size: 20rpx;
+	color: #999999;
+}
+.common-card .title-box .title{
+	font-size: 32rpx;
+	font-weight: bolder;
+	margin-top: 2rpx;
+}
+
+
+/* //内容 */
+.common-card .m-content{
+}
+.common-card .m-content .swiper{
+	height: 520rpx;
+}
+.common-card .m-content .swiper .swiper-item{
+	padding: 24rpx;
+	background-color: #f8f8f8;
+	border-radius: 24rpx;
+	position: relative;
+	box-sizing: border-box;
+}
+.common-card .m-content .swiper .swiper-item .title{
+	font-size: 28rpx;
+	font-weight: bolder;
+	margin-bottom: 24rpx;
+}
+
+
+/* 歌曲列表 */
+.common-card .m-content .swiper .swiper-item .song-list{
+}
+.common-card .m-content .swiper .swiper-item .song-list .song-list-item{
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	margin-bottom: 20rpx;
+}
+.common-card .m-content .swiper .swiper-item .song-list .song-list-item .index{
+	margin: 0 24rpx;
+	font-size: 30rpx;
+	font-weight: bolder;
+}
+.common-card .m-content .swiper .swiper-item .song-list .song-list-item .song-name{
+	font-size: 30rpx;
+}
+.common-card .m-content .swiper .swiper-item .song-list .song-list-item .artist{
+	color: #999999;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	font-size: 24rpx;
+}
+
+
+/* 横向滚动 */
+.scroll-x-box{
+}
+.scroll-x-box .scroll-X{
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.scroll-x-box .scroll-X .poster-list-item{
+	width: 200rpx;
+	display: inline-block;
+	margin-right: 30rpx;
+}
+.scroll-x-box .scroll-X .poster-list-item .image-box{
+	width: 200rpx;
+	position: relative;
+}
+.scroll-x-box .scroll-X .poster-list-item .image-box .dt-count{
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #FFFFFF;
+	background-color: rgba(0,0,0,.1);
+	border-radius: 10rpx;
+	padding: 0 5rpx;
+	font-size: 26rpx;
+}
+.scroll-x-box .scroll-X .poster-list-item .song-name{
+	height: auto;
+	color: #333;
+	margin-top: 8rpx;
+	font-size: 26rpx;
+	word-wrap : break-word ;
+	word-break: normal;
+}
+
+

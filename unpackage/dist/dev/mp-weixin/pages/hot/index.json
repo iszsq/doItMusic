@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "热门",
+  "usingComponents": {
+    "u-navbar": "/node-modules/uview-ui/components/u-navbar/u-navbar",
+    "u-swiper": "/node-modules/uview-ui/components/u-swiper/u-swiper",
+    "u-image": "/node-modules/uview-ui/components/u-image/u-image",
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "u-divider": "/node-modules/uview-ui/components/u-divider/u-divider"
+  }
+}

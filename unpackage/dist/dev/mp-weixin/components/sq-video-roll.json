@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "u-popup": "/node-modules/uview-ui/components/u-popup/u-popup",
+    "sq-comments": "/components/sq-comments"
+  },
+  "component": true
+}

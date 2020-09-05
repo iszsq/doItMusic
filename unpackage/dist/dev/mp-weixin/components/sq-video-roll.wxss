@@ -1,0 +1,110 @@
+
+.video-box.data-v-5b6c9933{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.swiper.data-v-5b6c9933{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.swiper-item.data-v-5b6c9933{
+	width: 100%;
+	height: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	position: relative;
+}
+.swiper-item .video-bg.data-v-5b6c9933{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.swiper-item .video-bg .bg-image.data-v-5b6c9933{
+	width: 100%;
+	height: 100%;
+	-webkit-filter: blur(5px);
+	        filter: blur(5px);
+}
+.uni-bg-red.data-v-5b6c9933{
+	background-color: #FF201F;
+}
+.uni-bg-green.data-v-5b6c9933{
+	background-color: #00B26A;
+}
+.uni-bg-blue.data-v-5b6c9933{
+	background-color: #007AFF;
+}
+.m-video.data-v-5b6c9933{
+	width: 750rpx;
+	height: 422rpx;
+}
+
+/**
+ * 视频上层的信息
+ */
+.controls-box.data-v-5b6c9933{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	color: #fff;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-flex-wrap: nowrap;
+	        flex-wrap: nowrap;
+	-webkit-box-align: end;
+	-webkit-align-items: flex-end;
+	        align-items: flex-end;
+	padding: 30rpx;
+}
+
+/**
+ * 视频信息
+ */
+.controls-box .detail-box.data-v-5b6c9933{
+	box-sizing: border-box;
+	padding: 24rpx;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+}
+.controls-box .detail-box .name.data-v-5b6c9933{
+	font-size: 32rpx;
+	font-weight: bolder;
+	margin-bottom: 15rpx;
+}
+.controls-box .operation-box.data-v-5b6c9933{
+	width: 100rpx;
+	font-size: 30rpx;
+	text-align: right;
+	padding: 0 24rpx;
+	box-sizing: border-box;
+}
+.controls-box .operation-box .o-icon.data-v-5b6c9933{
+	margin-bottom: 30rpx;
+	-webkit-transition: all .2s ease;
+	transition: all .2s ease;
+}
+.controls-box .operation-box .o-icon.data-v-5b6c9933:active{
+	-webkit-transform: scale(.8);
+	        transform: scale(.8);
+}
+

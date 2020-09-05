@@ -1,0 +1,24 @@
+
+.avatar-box.data-v-33d71495{
+	padding: 20px;
+}
+.avatar-box .user-name.data-v-33d71495{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	padding: 0 20px;
+}
+.user-grid.data-v-33d71495{
+}
+.user-grid .m-text.data-v-33d71495{
+	font-size: 16rpx;
+	margin-top: 8rpx;
+}
+.bottom-box.data-v-33d71495{
+	width: 550rpx;
+	height: 100rpx;
+	position: fixed;
+	bottom: -3px;
+	left: 0;
+}
+

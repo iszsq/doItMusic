@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "doItMusic",
+  "usingComponents": {
+    "sq-header": "/components/sq-header",
+    "sq-yunc-roll-box": "/components/sq-yunc-roll-box",
+    "sq-video-roll": "/components/sq-video-roll"
+  }
+}

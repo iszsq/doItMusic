@@ -1,0 +1,89 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/index",
+			"navigationBarTextStyle": "white",
+			"style": {
+				"navigationBarTitleText": "doItMusic",
+				"h5": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/my/index",
+			"style" : {
+			  "navigationBarTitleText": "我的",
+			  "h5": {
+			  	"titleNView": false
+			  }
+			}
+		},
+		{
+			"path" : "pages/hot/index",
+			"style" : {
+			  "navigationBarTitleText": "热门",
+			  "h5": {
+			  	"titleNView": false
+			  }
+			}
+		},
+		// 更多功能页面
+		{
+			"path" : "pages/more/index",
+			"style" : {
+			  "navigationBarTitleText": "更多",
+			  "h5": {
+			  	"titleNView": false
+			  }
+			}
+		}
+	    ,{
+            "path" : "pages/test/test",
+            "style" : {}
+        }
+    ],
+	// 底部导航组件配置
+	"tabBar": {
+		"color":"#8a8a8a",
+		"selectedColor":"#e51419",
+		"borderStyle":"black",
+		"backgroundColor":"#ffffff",
+		"list": [
+			{
+				"pagePath":"pages/hot/index",
+				"text":"热门",
+				"iconPath":"static/image/tabbar/hot.png",
+				"selectedIconPath":"static/image/tabbar/hot-active.png"
+			},
+			{
+				"pagePath":"pages/home/index",
+				"text":"首页",
+				"iconPath":"/static/image/logo-plain.png",
+				"selectedIconPath":"/static/image/logo-plain.png"
+			},
+			{
+				"pagePath":"pages/my/index",
+				"text":"我的",
+				"iconPath":"static/image/tabbar/user.png",
+				"selectedIconPath":"static/image/tabbar/user-active.png"
+			}
+		]	
+	 },
+	 // 自动引入comments文件夹下的组件，根目录
+	"easycom": {
+	  "autoscan": true,
+	  "^sq-(.*)": "@/components/sq-$1.vue", // 匹配components目录内的vue文件
+	  "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "custom"
+	},
+	"app-plus": {    
+		"nvueCompiler":"uni-app" //是否启用 uni-app 模式  
+	}   
+}

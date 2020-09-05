@@ -1,0 +1,52 @@
+
+.header-box{
+	width: 100%;
+	padding: 10rpx 0;
+	position: absolute;
+	z-index: 999;
+	left: 0;
+	top: 0;
+}
+.dl-wrapper{
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 25px;
+	bottom: 0px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-flex-wrap: nowrap;
+	        flex-wrap: nowrap;
+}
+/* 占满剩下的 */
+.swiper-content{
+	width: 100%;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+}
+.swiper{
+	height: 100%;
+}
+.swiper-item{
+	height: 100%;
+}
+.uni-bg-red{
+	background-color: #FF201F;
+}
+.uni-bg-green{
+	background-color: #00B26A;
+}
+.uni-bg-blue{
+	background-color: #007AFF;
+}
+/* 关注swiper-box */
+.focus-box{
+	color: #fff;
+}
+
