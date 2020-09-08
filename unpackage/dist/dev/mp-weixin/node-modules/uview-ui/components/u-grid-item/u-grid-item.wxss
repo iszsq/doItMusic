@@ -28,12 +28,18 @@
  * uView 组件
  */
 /* uni.scss */
-.u-grid-item.data-v-e96ccc9a {
+.u-grid-item.data-v-99a45d26 {
   box-sizing: border-box;
   background: #fff;
+
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
@@ -41,37 +47,41 @@
   -webkit-justify-content: center;
           justify-content: center;
   position: relative;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
           flex-direction: column;
   position: relative;
   float: left;
 }
-.u-grid-item-hover.data-v-e96ccc9a {
+.u-grid-item-hover.data-v-99a45d26 {
   background: #f7f7f7 !important;
 }
-.u-grid-marker-box.data-v-e96ccc9a {
+.u-grid-marker-box.data-v-99a45d26 {
   position: absolute;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
   line-height: 0;
 }
-.u-grid-marker-wrap.data-v-e96ccc9a {
+.u-grid-marker-wrap.data-v-99a45d26 {
   position: absolute;
 }
-.u-grid-item-box.data-v-e96ccc9a {
+.u-grid-item-box.data-v-99a45d26 {
   padding: 30rpx 0;
+
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
           justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
           flex-direction: column;
   -webkit-box-flex: 1;

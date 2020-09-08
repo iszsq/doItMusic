@@ -3168,6 +3168,15 @@ text {
 .u-padding-bottom-80 {
   padding-bottom: 80rpx !important;
 }
+.u-reset-nvue {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
 .u-type-primary-light {
   color: #ecf5ff;
 }
@@ -3487,6 +3496,39 @@ u-dropdown {
 }
 
 /* end-微信小程序编译后页面有组件名的元素，特别处理--end */
+
+
+
+
+
+/* start--头条小程序编译后页面有组件名的元素，特别处理--start */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* end-头条小程序编译后页面有组件名的元素，特别处理--end */
 page {
   background-color: #333;
 }

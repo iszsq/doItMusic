@@ -28,16 +28,20 @@
  * uView 组件
  */
 /* uni.scss */
-.u-cell-box.data-v-441951a6 {
+.u-cell-box.data-v-c4aeef32 {
   width: 100%;
 }
-.u-cell-title.data-v-441951a6 {
+.u-cell-title.data-v-c4aeef32 {
   padding: 30rpx 32rpx 10rpx 32rpx;
   font-size: 30rpx;
   text-align: left;
   color: #909399;
 }
-.u-cell-item-box.data-v-441951a6 {
+.u-cell-item-box.data-v-c4aeef32 {
   background-color: #FFFFFF;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
 }
 

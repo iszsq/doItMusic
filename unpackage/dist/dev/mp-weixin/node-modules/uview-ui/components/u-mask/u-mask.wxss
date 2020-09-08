@@ -28,7 +28,7 @@
  * uView 组件
  */
 /* uni.scss */
-.u-mask.data-v-709c236d {
+.u-mask.data-v-7775dba7 {
   position: fixed;
   top: 0;
   left: 0;
@@ -40,10 +40,10 @@
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
-.u-mask-show.data-v-709c236d {
+.u-mask-show.data-v-7775dba7 {
   opacity: 1;
 }
-.u-mask-zoom.data-v-709c236d {
+.u-mask-zoom.data-v-7775dba7 {
   -webkit-transform: scale(1.2, 1.2);
           transform: scale(1.2, 1.2);
 }

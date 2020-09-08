@@ -28,40 +28,46 @@
  * uView 组件
  */
 /* uni.scss */
-view.data-v-070c5b2d,
-scroll-view.data-v-070c5b2d {
+view.data-v-0de61367,
+scroll-view.data-v-0de61367 {
   box-sizing: border-box;
 }
-.data-v-070c5b2d::-webkit-scrollbar,.data-v-070c5b2d::-webkit-scrollbar,.data-v-070c5b2d::-webkit-scrollbar {
+.data-v-0de61367::-webkit-scrollbar,.data-v-0de61367::-webkit-scrollbar,.data-v-0de61367::-webkit-scrollbar {
   display: none;
   width: 0 !important;
   height: 0 !important;
   -webkit-appearance: none;
   background: transparent;
 }
-.u-scroll-box.data-v-070c5b2d {
+.u-scroll-box.data-v-0de61367 {
   position: relative;
 }
-.u-scroll-view.data-v-070c5b2d {
+.u-scroll-view.data-v-0de61367 {
   width: 100%;
   white-space: nowrap;
   position: relative;
 }
-.u-tab-item.data-v-070c5b2d {
+.u-tab-item.data-v-0de61367 {
   position: relative;
   display: inline-block;
   text-align: center;
   -webkit-transition-property: background-color, color;
   transition-property: background-color, color;
 }
-.u-tab-bar.data-v-070c5b2d {
+.u-tab-bar.data-v-0de61367 {
   position: absolute;
   bottom: 0;
 }
-.u-tabs-scorll-flex.data-v-070c5b2d {
+.u-tabs-scorll-flex.data-v-0de61367 {
+
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
           justify-content: space-between;

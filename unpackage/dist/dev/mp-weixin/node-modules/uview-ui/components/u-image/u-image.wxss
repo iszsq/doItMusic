@@ -28,24 +28,30 @@
  * uView 组件
  */
 /* uni.scss */
-.u-image.data-v-92f78116 {
+.u-image.data-v-6dd0d12f {
   position: relative;
   -webkit-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
 }
-.u-image__image.data-v-92f78116 {
+.u-image__image.data-v-6dd0d12f {
   width: 100%;
   height: 100%;
 }
-.u-image__loading.data-v-92f78116, .u-image__error.data-v-92f78116 {
+.u-image__loading.data-v-6dd0d12f, .u-image__error.data-v-6dd0d12f {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;

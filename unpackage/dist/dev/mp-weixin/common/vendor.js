@@ -8815,9 +8815,9 @@ _vue.default.use(_uviewUi.default);
 
 /***/ }),
 /* 14 */
-/*!**********************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/index.js ***!
-  \**********************************************************************************/
+/*!******************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/index.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8961,9 +8961,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 15 */
-/*!*********************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/mixin/mixin.js ***!
-  \*********************************************************************************************/
+/*!*****************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/mixin/mixin.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9002,9 +9002,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 16 */
-/*!***********************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/request/index.js ***!
-  \***********************************************************************************************/
+/*!*******************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/request/index.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9182,9 +9182,9 @@ new Request();exports.default = _default;
 
 /***/ }),
 /* 17 */
-/*!****************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/deepMerge.js ***!
-  \****************************************************************************************************/
+/*!************************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/deepMerge.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9222,9 +9222,9 @@ deepMerge;exports.default = _default;
 
 /***/ }),
 /* 18 */
-/*!****************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/deepClone.js ***!
-  \****************************************************************************************************/
+/*!************************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/deepClone.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9255,9 +9255,9 @@ deepClone;exports.default = _default;
 
 /***/ }),
 /* 19 */
-/*!***********************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/test.js ***!
-  \***********************************************************************************************/
+/*!*******************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/test.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9497,9 +9497,9 @@ function code(value) {var len = arguments.length > 1 && arguments[1] !== undefin
 
 /***/ }),
 /* 20 */
-/*!******************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/queryParams.js ***!
-  \******************************************************************************************************/
+/*!**************************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/queryParams.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9565,9 +9565,9 @@ queryParams;exports.default = _default;
 
 /***/ }),
 /* 21 */
-/*!************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/route.js ***!
-  \************************************************************************************************/
+/*!********************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/route.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9661,9 +9661,9 @@ route;exports.default = _default;
 
 /***/ }),
 /* 22 */
-/*!*****************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/timeFormat.js ***!
-  \*****************************************************************************************************/
+/*!*************************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/timeFormat.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9723,9 +9723,9 @@ timeFormat;exports.default = _default;
 
 /***/ }),
 /* 23 */
-/*!***************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/timeFrom.js ***!
-  \***************************************************************************************************/
+/*!***********************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/timeFrom.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9779,9 +9779,9 @@ timeFrom;exports.default = _default;
 
 /***/ }),
 /* 24 */
-/*!********************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/colorGradient.js ***!
-  \********************************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/colorGradient.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9888,9 +9888,9 @@ function rgbToHex(rgb) {
 
 /***/ }),
 /* 25 */
-/*!***********************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/guid.js ***!
-  \***********************************************************************************************/
+/*!*******************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/guid.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9939,9 +9939,9 @@ guid;exports.default = _default;
 
 /***/ }),
 /* 26 */
-/*!************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/color.js ***!
-  \************************************************************************************************/
+/*!********************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/color.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9986,9 +9986,9 @@ color;exports.default = _default;
 
 /***/ }),
 /* 27 */
-/*!****************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/type2icon.js ***!
-  \****************************************************************************************************/
+/*!************************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/type2icon.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10031,9 +10031,9 @@ type2icon;exports.default = _default;
 
 /***/ }),
 /* 28 */
-/*!******************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/randomArray.js ***!
-  \******************************************************************************************************/
+/*!**************************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/randomArray.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10048,9 +10048,9 @@ randomArray;exports.default = _default;
 
 /***/ }),
 /* 29 */
-/*!**************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/addUnit.js ***!
-  \**************************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/addUnit.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10066,9 +10066,9 @@ function addUnit() {var value = arguments.length > 0 && arguments[0] !== undefin
 
 /***/ }),
 /* 30 */
-/*!*************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/random.js ***!
-  \*************************************************************************************************/
+/*!*********************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/random.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10086,9 +10086,9 @@ random;exports.default = _default;
 
 /***/ }),
 /* 31 */
-/*!***********************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/trim.js ***!
-  \***********************************************************************************************/
+/*!*******************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/trim.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10111,9 +10111,9 @@ trim;exports.default = _default;
 
 /***/ }),
 /* 32 */
-/*!************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/toast.js ***!
-  \************************************************************************************************/
+/*!********************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/toast.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10131,9 +10131,9 @@ toast;exports.default = _default;
 
 /***/ }),
 /* 33 */
-/*!****************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/getParent.js ***!
-  \****************************************************************************************************/
+/*!************************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/getParent.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10188,9 +10188,9 @@ function getParent(name, keys) {
 
 /***/ }),
 /* 34 */
-/*!**************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/$parent.js ***!
-  \**************************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/$parent.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10216,9 +10216,9 @@ function $parent() {var name = arguments.length > 0 && arguments[0] !== undefine
 
 /***/ }),
 /* 35 */
-/*!**********************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/sys.js ***!
-  \**********************************************************************************************/
+/*!******************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/sys.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10234,9 +10234,9 @@ function sys() {
 
 /***/ }),
 /* 36 */
-/*!***************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/debounce.js ***!
-  \***************************************************************************************************/
+/*!***********************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/debounce.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10273,9 +10273,9 @@ debounce;exports.default = _default;
 
 /***/ }),
 /* 37 */
-/*!***************************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/function/throttle.js ***!
-  \***************************************************************************************************/
+/*!***********************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/function/throttle.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10315,15 +10315,15 @@ throttle;exports.default = _default;
 
 /***/ }),
 /* 38 */
-/*!***********************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/config/config.js ***!
-  \***********************************************************************************************/
+/*!*******************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/config/config.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 此版本发布于2020-08-25
-var version = '1.6.5';var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 此版本发布于2020-09-07
+var version = '1.6.8';var _default =
 
 {
   v: version,
@@ -10338,9 +10338,9 @@ var version = '1.6.5';var _default =
 
 /***/ }),
 /* 39 */
-/*!***********************************************************************************************!*\
-  !*** F:/HBuilderX/pro/doItMuisic/node_modules/_uview-ui@1.6.5@uview-ui/libs/config/zIndex.js ***!
-  \***********************************************************************************************/
+/*!*******************************************************************************!*\
+  !*** F:/HBuilderX/pro/doItMuisic/node_modules/uview-ui/libs/config/zIndex.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

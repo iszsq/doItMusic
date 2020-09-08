@@ -28,13 +28,19 @@
  * uView 组件
  */
 /* uni.scss */
-.u-divider.data-v-914f891e {
+.u-divider.data-v-239d3faa {
   width: 100%;
   position: relative;
   text-align: center;
+
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+
   -webkit-box-pack: center;
   -webkit-justify-content: center;
           justify-content: center;
@@ -42,34 +48,31 @@
   -webkit-align-items: center;
           align-items: center;
   overflow: hidden;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
-.u-divider-line.data-v-914f891e {
+.u-divider-line.data-v-239d3faa {
   border-bottom: 1px solid #e4e7ed;
   -webkit-transform: scale(1, 0.5);
           transform: scale(1, 0.5);
   -webkit-transform-origin: center;
           transform-origin: center;
 }
-.u-divider-line--bordercolor--primary.data-v-914f891e {
+.u-divider-line--bordercolor--primary.data-v-239d3faa {
   border-color: #2979ff;
 }
-.u-divider-line--bordercolor--success.data-v-914f891e {
+.u-divider-line--bordercolor--success.data-v-239d3faa {
   border-color: #19be6b;
 }
-.u-divider-line--bordercolor--error.data-v-914f891e {
+.u-divider-line--bordercolor--error.data-v-239d3faa {
   border-color: #2979ff;
 }
-.u-divider-line--bordercolor--info.data-v-914f891e {
+.u-divider-line--bordercolor--info.data-v-239d3faa {
   border-color: #909399;
 }
-.u-divider-line--bordercolor--warning.data-v-914f891e {
+.u-divider-line--bordercolor--warning.data-v-239d3faa {
   border-color: #ff9900;
 }
-.u-divider-text.data-v-914f891e {
+.u-divider-text.data-v-239d3faa {
   white-space: nowrap;
   padding: 0 16rpx;
   display: -webkit-inline-box;

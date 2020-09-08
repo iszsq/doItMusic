@@ -1,5 +1,5 @@
 # doItMusic 不只是网易云音乐
-
+**经测试能运行到安卓app、微信小程序、手机浏览器。**
 # 参考项目
 GitHub网易云音乐接口开源项目
  [Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
@@ -32,7 +32,11 @@ GitHub网易云音乐接口开源项目
 
 ### 我的-更多
 ![h5](./doc/images/h5-我的-更多.png)
-	
+
+# 技术栈
+1. sass - HBuilder X安装sass编译
+2. uView - 一套不错的兼容多端的ui框架
+
 # 安装运行
 ```
 git clone https://gitee.com/iszsq/doItMusic.git

@@ -28,17 +28,23 @@
  * uView 组件
  */
 /* uni.scss */
-.u-tips.data-v-56fe7e26 {
+.u-tips.data-v-6766c527 {
   font-size: 26rpx;
   text-align: center;
   padding: 34rpx 0;
   line-height: 1;
   color: #909399;
 }
-.u-action-sheet-item.data-v-56fe7e26 {
+.u-action-sheet-item.data-v-6766c527 {
+
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+
   line-height: 1;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -46,14 +52,21 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  font-size: 34rpx;
+  font-size: 32rpx;
   padding: 34rpx 0;
+  -webkit-flex-direction: column;
+          flex-direction: column;
 }
-.u-gab.data-v-56fe7e26 {
+.u-action-sheet-item__subtext.data-v-6766c527 {
+  font-size: 24rpx;
+  color: #909399;
+  margin-top: 20rpx;
+}
+.u-gab.data-v-6766c527 {
   height: 12rpx;
   background-color: #eaeaec;
 }
-.u-actionsheet-cancel.data-v-56fe7e26 {
+.u-actionsheet-cancel.data-v-6766c527 {
   color: #303133;
 }
 
