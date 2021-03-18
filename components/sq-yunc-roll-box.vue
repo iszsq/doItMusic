@@ -207,6 +207,9 @@
 				this.pause();
 			},
 			play(){
+				if(!this.actived){
+					return;
+				}
 				this.audioCtx && this.audioCtx.play();
 			},
 			pause(){
