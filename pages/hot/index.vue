@@ -202,22 +202,22 @@
 			 */
 			async initToplist(){
 				let riseSongDetail = await this.$yunApi.playlist(19723756);
-				this.riseSong= riseSongDetail.data.playlist.tracks.slice(0,6);
+				this.riseSong= riseSongDetail.playlist.tracks.slice(0,6);
 				
 				let newSongDetail = await this.$yunApi.playlist(3779629);
-				this.topList.newSong= newSongDetail.data.playlist.tracks.slice(0,3);
+				this.topList.newSong= newSongDetail.playlist.tracks.slice(0,3);
 				
 				let hotSongDetail = await this.$yunApi.playlist(3778678);
-				this.topList.hotSong= hotSongDetail.data.playlist.tracks.slice(0,3);
+				this.topList.hotSong= hotSongDetail.playlist.tracks.slice(0,3);
 				
 				let rapSongDetail = await this.$yunApi.playlist(991319590);
-				this.topList.rapSong= rapSongDetail.data.playlist.tracks.slice(0,3);
+				this.topList.rapSong= rapSongDetail.playlist.tracks.slice(0,3);
 			},
 			/**
 			 * 获取电音榜单
 			 */
 			getDyTopList(){
-				this.$yunApi.playlist(1978921795).then(res=>{
+				this.$yunApi.playlist(1978921795).then(data=>{
 					this.dyTopList= res.data.playlist.tracks.slice(0,9);
 				});
 			},

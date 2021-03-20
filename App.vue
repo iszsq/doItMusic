@@ -2,9 +2,6 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch');
-			this.$api.getTopicDetail().then(res=>{
-				
-			});
 		},
 		onShow: function() {
 			console.log('App Show')
@@ -27,9 +24,12 @@
 	@import '/static/css/styles.css';
 	/* #endif */
 	
+	:root{
+		--title-bar-height: 120rpx;
+	}
 	
 	page {
-		background-color: #333;
+		background-color: #f0f0f0;
 	}
 	
 	/* #ifndef APP-NVUE */

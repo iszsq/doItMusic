@@ -23,7 +23,7 @@
 					return '';
 				}
 				if(val >= 10000){
-					return (val/10000).toFixed(fixedNum)+'万';
+					return (val/10000).toFixed(fixedNum)+'w';
 				}
 				return val;
 			},
@@ -34,6 +34,16 @@
 				let date = new Date(time);
 				return dateUtil.dateFormat(format, date);
 			},
+			/**
+			 * 打开url链接
+			 */
+			openUrl(params = {}) {
+				let {url} = params;
+				let enUrl = encodeURIComponent(url);
+				uni.navigateTo({
+					url: '/pages/webBrowser/webBrowser?url=' + enUrl,
+				});
+			}
 		},
 	}
 </script>

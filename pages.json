@@ -37,10 +37,26 @@
 			  	"titleNView": false
 			  }
 			}
-		}
-	    ,{
-            "path" : "pages/test/test",
-            "style" : {}
+		},
+		//webview页面
+		{
+            "path" : "pages/webBrowser/webBrowser",
+            "style" : {
+				"h5": {
+					"titleNView": false
+				}
+			}
+        },
+		//搜索页面
+		{
+            "path" : "pages/searchPage/searchPage",
+            "style" : {
+				"navigationStyle": "custom" ,// 隐藏系统导航栏
+				"navigationBarTitleText": "搜索",
+				"h5": {
+					"titleNView": false
+				}
+			}
         }
     ],
 	// 底部导航组件配置
@@ -73,8 +89,9 @@
 	 // 自动引入comments文件夹下的组件，根目录
 	"easycom": {
 	  "autoscan": true,
-	  "^sq-(.*)": "@/components/sq-$1.vue", // 匹配components目录内的vue文件
-	  "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	  "^sq-(.*)": "@/components/sq/sq-$1.vue", // 匹配components目录内的vue文件
+	  "^q-(.*)": "@/components/q/$1/q-$1.vue", // 匹配components目录内的vue文件
+	  "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue" //匹配uview组件
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
