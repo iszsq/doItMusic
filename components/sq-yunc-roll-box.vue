@@ -154,7 +154,7 @@
 				}
 			},
 			/**
-			 * 获取列表
+			 * 获取云村热门列表
 			 */
 			async getList(){
 				uni.showLoading();

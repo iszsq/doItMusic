@@ -1,5 +1,5 @@
 const config = {
-	yunApiBaseUrl: 'http://119.23.218.125:9981/yun_api/',
+	yunApiBaseUrl: 'http://192.168.102.128:3000',
 };
 
 export default config;
