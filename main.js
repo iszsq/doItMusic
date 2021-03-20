@@ -8,7 +8,7 @@ import YunApi from './service/yunApi.js';
 
 Vue.config.productionTip = false;
 //api接口
-Vue.prototype.$yunApi = YunApi;
+Vue.prototype.$api = YunApi;
 //全局混入
 Vue.mixin(BaseMixin);
 //eventBus
