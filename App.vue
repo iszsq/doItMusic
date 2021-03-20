@@ -1,7 +1,10 @@
 <script>
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+			console.log('App Launch');
+			this.$api.getTopicDetail().then(res=>{
+				
+			});
 		},
 		onShow: function() {
 			console.log('App Show')

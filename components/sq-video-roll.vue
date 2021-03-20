@@ -205,14 +205,18 @@
 			 * 暂停播放
 			 */
 			pause(){
+				console.debug(videoContext, '--pause video');
 				let videoContext = uni.createVideoContext('mVideo');
-				console.debug(videoContext, '--videoContext');
 				videoContext.pause();
 			},
 			/**
 			 * 开始播放
 			 */
 			play(){
+				console.debug(videoContext, '--play video');
+				if(!this.actived){
+					return;
+				}
 				let videoContext = uni.createVideoContext('mVideo');
 				videoContext.play();
 			},
