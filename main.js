@@ -6,6 +6,9 @@ import MyBusPlugin from './plugins/MyBusPlugin';
 import BaseMixin from './mixins/base.vue'
 import YunApi from './service/yunApi.js';
 
+import '@/static/css/styles.css';
+
+
 Vue.config.productionTip = false;
 //api接口
 Vue.prototype.$api = YunApi;

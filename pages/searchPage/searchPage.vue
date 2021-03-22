@@ -7,14 +7,17 @@
 					@change="onSearchChange"
 					@focus="onFocus"
 					@blur="onBlur"
+					@search="onSearch"
 				/>
 				
+				<!-- 搜索建议 -->
 				<view class="search-suggest-box" v-show="showSuggest && searchWord">
-					<view style="color: #007AFF;" v-if="searchWord"> 搜索“{{searchWord}}" </view>
+					<view @tap.stop="onClickSearch(searchWord)" style="color: #007AFF;" v-if="searchWord"> 搜索“{{searchWord}}" </view>
 					
 					<u-cell-item 
 						v-for="item in suggestList"
 						icon="search" :arrow="false" 
+						@click="onClickSearch(item.keyword)"
 						:title="item.keyword"
 					></u-cell-item>
 				</view>
@@ -34,14 +37,21 @@
 					</u-button>
 				</view>
 			</u-cell-item>
-			<u-divider></u-divider>
 			
+			<u-divider></u-divider>
+				
 			<view class="hot-item-box">
-				<u-row gutter="16" justify="bewteen">
-					<u-col span="6" class="hot-item" v-for="(item,index) in hotList">
-						<view class="number" :class="{'red-text': index<3}"> {{index+1}}</view>
-						<view class="word" :class="{'text-bolder': index<3}"> {{item.searchWord}}</view>
-						<image v-if="item.iconUrl" style="margin-left: 15rpx;width: 30rpx;" mode="widthFix" :src="item.iconUrl"></image>
+				<u-row gutter="16" justify="bewteen" style="width: auto;overflow: hidden;">
+					<u-col 
+						span="6" 
+						v-for="(item,index) in hotList" 
+						@click="onClickSearch(item.searchWord)"
+					>
+						<view class="hot-item" >
+							<view class="number" :class="{'red-text': index<3}"> {{index+1}}</view>
+							<view class="word" :class="{'text-bolder': index<3}"> {{item.searchWord}}</view>
+							<image v-if="item.iconUrl" style="margin-left: 15rpx;width: 30rpx;" mode="widthFix" :src="item.iconUrl"></image>
+						</view>
 					</u-col>
 				</u-row>
 			</view>
@@ -97,18 +107,39 @@
 					this.suggestList = data.result.allMatch;
 				});
 			},
+			/**
+			 * 点击回车确认搜索
+			 */
+			onSearch(value){
+				this.onClickSearch(value);
+			},
 			onFocus(value){
 				this.showSuggest = true;
 
 			},
 			onBlur(value){
-				this.showSuggest = false;
+				setTimeout(()=>{
+					this.showSuggest = false;
+				}, 100);
 			},
+			/**
+			 * 点击搜索结果
+			 */
+			onClickSearch(word){
+				console.log(word);
+				if (!word) {
+					return;
+				}
+				uni.navigateTo({
+					url: '/pages/searchPage/searchResult?word=' + encodeURIComponent(word)
+				});
+			}
 		},
 	}
 </script>
 
-<style>
+<style scoped>
+		
 	.content{
 		background-color: #fff;
 	}

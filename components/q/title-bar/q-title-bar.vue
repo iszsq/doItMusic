@@ -1,11 +1,13 @@
 <template>
 <!-- 首页顶部标题栏 -->
+	
 	<view class="title-bar-warppper">
 		<!-- 左侧菜单按钮 -->
 		<view class="menu-button-box"> 
 			<u-icon name="list" color="#333" size="50"></u-icon>
 			<u-badge type="error" count="7" is-dot :offset="[0,0]">
 			</u-badge>
+			
 		</view>
 		
 		<!-- 标题栏内容 -->

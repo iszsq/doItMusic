@@ -57,6 +57,28 @@
 					"titleNView": false
 				}
 			}
+        },
+		//搜索结果页
+		{
+            "path" : "pages/searchPage/searchResult",
+            "style" : {
+				"navigationStyle": "custom" ,// 隐藏系统导航栏
+				"navigationBarTitleText": "搜索",
+				"h5": {
+					"titleNView": false
+				}
+			}
+        },	
+		//音乐播放页
+		{
+            "path" : "pages/playMusicPage/playMusicPage",
+            "style" : {
+				"navigationStyle": "custom" ,// 隐藏系统导航栏
+				"navigationBarTitleText": "音乐",
+				"h5": {
+					"titleNView": false
+				}
+			}
         }
     ],
 	// 底部导航组件配置

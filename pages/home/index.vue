@@ -2,9 +2,12 @@
 	<!-- 首页 -->
 	<view class="dl-wrapper">
 		<!-- 顶部标题栏控件 -->
-		<q-title-bar>
-			<q-search-bar />
-		</q-title-bar>
+		<u-navbar :is-back="false" :height="55">
+			<view style="padding: 0 20rpx;">
+				<q-search-bar @focus="onFocus"/>
+			</view>
+		</u-navbar>
+		
 		
 		
 		<!-- 轮播图 -->
@@ -31,7 +34,9 @@
 					:scroll-x="true"
 					class="scroll-X" 
 				>
-					<view class="poster-list-item" v-for="(item,index) in riseSong" :key="item.id">
+					<view class="poster-list-item" v-for="(item,index) in riseSong" :key="item.id"
+						@tap="onClickMusicItem(item)"
+					>
 						<view class="image-box">
 							<u-image width="200rpx" height="200rpx" border-radius="10" :src="item.al.picUrl+'?param=270y270'" />
 							<view class="dt-count">
@@ -59,7 +64,11 @@
 					>
 						<swiper-item class="swiper-item">
 							<view class="song-list">
-								<view class="song-list-item" v-for="(item,index) in (dyTopList.slice(column*3, (column*3)+3) )" :key="item.id">
+								<view class="song-list-item" 
+									v-for="(item,index) in (dyTopList.slice(column*3, (column*3)+3) )" 
+									:key="item.id"
+									@tap="onClickMusicItem(item)"
+								>
 									<u-image width="100rpx" height="100rpx" border-radius="10" :src="item.al.picUrl+'?param=270y270'"></u-image>
 									<view class="flex-row" style="width:0;flex: 1;align-items: center;margin: 0 24rpx;">
 										<view class="song-name">{{item.name}}</view>
@@ -89,7 +98,10 @@
 					:scroll-x="true"
 					class="scroll-X" 
 				>
-					<view class="poster-list-item" v-for="(item,index) in gdTopList" :key="item.id">
+					<view class="poster-list-item" 
+						v-for="(item,index) in gdTopList" :key="item.id"
+						@tap="onClickMusicItem(item)"
+					>
 						<view class="image-box">
 							<u-image width="200rpx" height="300rpx" border-radius="10" :src="item.al.picUrl+'?param=270y480'" />
 							<view class="dt-count">
@@ -115,7 +127,10 @@
 						<view class="swiper-item">
 							<view class="title">云音乐新歌榜</view>
 							<view class="song-list">
-								<view class="song-list-item" v-for="(item,index) in topList.newSong" :key="index">
+								<view class="song-list-item" 
+									v-for="(item,index) in topList.newSong" :key="index"
+									@tap="onClickMusicItem(item)"
+								>
 									<u-image width="100rpx" height="100rpx" border-radius="10" :src="item.al.picUrl+'?param=270y270'"></u-image>
 									<view class="index">{{index+1}}</view>
 									<view class="song-name">{{item.name}}</view>
@@ -129,7 +144,10 @@
 						<view class="swiper-item">
 							<view class="title">云音乐热歌榜</view>
 							<view class="song-list">
-								<view class="song-list-item" v-for="(item,index) in topList.hotSong" :key="index">
+								<view class="song-list-item" 
+									v-for="(item,index) in topList.hotSong" :key="index"
+									@tap="onClickMusicItem(item)"
+								>
 									<u-image width="100rpx" height="100rpx" border-radius="10" :src="item.al.picUrl+'?param=270y270'"></u-image>
 									<view class="index">{{index+1}}</view>
 									<view class="song-name">{{item.name}}</view>
@@ -143,7 +161,10 @@
 						<view class="swiper-item">
 							<view class="title">云音乐说唱榜</view>
 							<view class="song-list">
-								<view class="song-list-item" v-for="(item,index) in topList.rapSong" :key="index">
+								<view class="song-list-item" 
+									v-for="(item,index) in topList.rapSong" :key="index"
+									@tap="onClickMusicItem(item)"
+								>
 									<u-image width="100rpx" height="100rpx" border-radius="10" :src="item.al.picUrl+'?param=270y270'"></u-image>
 									<view class="index">{{index+1}}</view>
 									<view class="song-name">{{item.name}}</view>
@@ -157,7 +178,7 @@
 			</view>
 		</view>
 		
-		<u-divider style="padding: 20rpx;">到底啦</u-divider>
+		<u-divider style="padding: 20rpx;background-color: #fff;">到底啦</u-divider>
 		
 	</view>
 </template>
@@ -190,6 +211,14 @@
 			this.initToplist();
 		},
 		methods:{
+			/**
+			 * 搜索框获得焦点时
+			 */
+			onFocus(){
+				uni.navigateTo({
+					url: '/pages/searchPage/searchPage'
+				});
+			},
 			/**
 			 * 点击banner广告
 			 */
@@ -237,17 +266,28 @@
 				let rapSongDetail = await this.$api.playlistDetail({data: {id: 991319590}});
 				this.topList.rapSong= rapSongDetail.playlist.tracks.slice(0,3);
 			},
+			/**
+			 * 点击音乐
+			 */
+			onClickMusicItem(item){
+				console.debug('onClickMusicItem', item);
+				let params = {
+					id: item.id,
+					name: item.name,
+					picUrl : item.al ? item.al.picUrl : ''
+				};
+				this.openMp3(params);
+			},
 		},
 	}
 </script>
 
-<style >
+<style scoped>
 	
 	.dl-wrapper{
 		width: 100%;
 		top: var(--status-bar-height);
 		bottom: var(--window-bottom);
-		padding-top: var(--title-bar-height);
 		padding-bottom: 50rpx;
 	}
 	

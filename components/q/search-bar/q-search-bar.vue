@@ -2,11 +2,13 @@
 	<!-- 搜索控件 -->
 	<view >
 		<u-search 
+			v-model="searchWord"
 			:placeholder="defaultSearchWord"  
 			:show-action="false"
 			@change="onChange"
 			@focus="onFocus"
 			@blur="onBlur"
+			@search="onSearch"
 		>
 		</u-search>
 	</view>
@@ -18,7 +20,8 @@
 		data() {
 			return {
 				//默认搜索关键词
-				defaultSearchWord : ''
+				defaultSearchWord : '',
+				searchWord: '',
 			}
 		},
 		created(){
@@ -43,6 +46,12 @@
 			onBlur(value){
 				this.$emit('blur', value);
 			},
+			onSearch(value){
+				this.$emit('search', value);
+			},
+			setWord(value){
+				this.searchWord = value;
+			}
 		},
 	}
 </script>

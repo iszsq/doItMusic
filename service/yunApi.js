@@ -28,6 +28,7 @@ const apiList = [
 		name: 'playlistDetail' ,
 		desc: '获取歌单详情' ,
 		url: '/playlist/detail', 
+		usedLoading: false
 	},
 	{
 		name: 'searchDefault' ,
@@ -46,6 +47,31 @@ const apiList = [
 		url: '/search/suggest', 
 		usedLoading: false
 	},
+	{
+		name: 'searchMultimatch' ,
+		desc: '搜索多重匹配' ,
+		url: '/search/multimatch', 
+		usedLoading: true
+	},
+	{
+		name: 'search' ,
+		desc: '搜索' ,
+		url: '/search', 
+		usedLoading: true
+	},
+	{
+		name: 'songUrl' ,
+		desc: '获取音乐 url' ,
+		url: '/song/url', 
+		usedLoading: true
+	},
+	{
+		name: 'lyric' ,
+		desc: '获取音乐 歌词' ,
+		url: '/lyric', 
+		usedLoading: true
+	},
+	
 ];
 
 
