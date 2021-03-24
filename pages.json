@@ -79,6 +79,39 @@
 					"titleNView": false
 				}
 			}
+        },
+		//歌手主页
+		{
+            "path" : "pages/artistPage/artistPage",
+            "style" : {
+				"navigationStyle": "custom" ,// 隐藏系统导航栏
+				"navigationBarTitleText": "歌手",
+				"h5": {
+					"titleNView": false
+				}
+			}
+        },
+		//歌单详情页
+		{
+            "path" : "pages/playlistPage/playlistPage",
+            "style" : {
+				"navigationStyle": "custom" ,// 隐藏系统导航栏
+				"navigationBarTitleText": "歌单",
+				"h5": {
+					"titleNView": false
+				}
+			}
+        },
+		//视频播放页
+		{
+            "path" : "pages/playVideoPage/playVideoPage",
+            "style" : {
+				"navigationStyle": "custom" ,// 隐藏系统导航栏
+				"navigationBarTitleText": "视频",
+				"h5": {
+					"titleNView": false
+				}
+			}
         }
     ],
 	// 底部导航组件配置

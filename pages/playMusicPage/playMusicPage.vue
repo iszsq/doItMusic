@@ -1,7 +1,9 @@
 <template>
 	<!-- 音乐播放页面 -->
 	<view class="play-music-page">
-		<u-navbar  :height="55" :title="audioTitle" :immersive="true" :border-bottom="false"	
+		<u-navbar  
+			:height="55" :title="audioTitle" :immersive="true" 
+			:border-bottom="false"	
 			:background="{ background: 'transparent' }"
 			>
 		</u-navbar>
@@ -70,7 +72,7 @@
 				<view class="top-bts">
 					<view><u-icon name="heart" size="60"/></view>
 					<view><u-icon name="download" size="60"/></view>
-					<view><u-icon name="more-circle" size="60"/></view>
+					<view @tap="openComment"><u-icon name="chat" size="60" /></view>
 				</view>
 				
 				<!-- 进度条 -->
@@ -98,11 +100,26 @@
 				<!-- 控制按钮 -->
 				<view class="control-bts">
 					<view style="margin: 0 20rpx;"><u-icon name="rewind-left" size="100"/></view>
-					<view @click="onClickPlayBt" style="margin: 0 20rpx;"><u-icon :name=" audioMeta.paused ? 'play-circle' : 'pause-circle'" size="100"/></view>
+					<view @click="onClickPlayBt" style="margin: 0 20rpx;">
+						<u-icon :name=" audioMeta.paused ? 'play-circle' : 'pause-circle'" size="100"/>
+					</view>
 					<view style="margin: 0 20rpx;"><u-icon name="rewind-right" size="100"/></view>
 				</view>
 			</view>
 		</view>
+		
+		
+		<!-- 评论区 -->
+		<u-popup 
+			v-model="showComment" 
+			safe-area-inset-bottom 
+			closeable 
+			mode="bottom"
+			border-radius="10"
+			height="800rpx"
+		>
+			<sq-comments ref="comments"/>
+		</u-popup>
 	</view>
 </template>
 
@@ -125,43 +142,43 @@
 				lrcScrollTop: 0,
 				//显示第几行歌词
 				showlrcIndex: 0,
+				//
+				showComment: false,
 			}
 		},
 		computed: {
-			...mapState(['audioId', 'audioTitle', 'picUrl']),
+			...mapState(['audioId', 'audioTitle', 'picUrl', 'audioMeta']),
 			...mapGetters(['audioPageBg']),
 			currentTime() {
-				console.log('hello', this.audioMeta.currentTime)
+				console.log('hello', this.audioMeta.currentTime);
+				let audioMeta = this.audioMeta;
 				this.$u.throttle(() => {
-					
-					this.showlrcIndex = i+ 1;
 					console.log(index);
 				}, 500);
 				
-				return this.audioMeta.currentTime;
+				return audioMeta.currentTime;
 			},
 		},
 		watch: {
-			currentTime(val){
-				if (!this.audioLrc.ms || this.audioLrc.ms.length <= 0) {
-					
+			audioMeta(newVal){
+				//节流
+				if(!this.audioLrc.ms){
 					return;
 				}
-				//节流
 				this.$u.throttle(() => {
 					let ms = this.audioLrc.ms;
-					let index = 0;
-					for (let i=0, len=ms.length; i < len; i++) { 
+					let {currentTime} = newVal;
+					
+					let index = this.showlrcIndex;
+					for (let i=0, len = ms.length; i < len; i++) { 
 						let item = ms[i];
-			
-						if (item.t  >= val) {
+						if (item.t  >= currentTime) {
 							index = i - 1;
 							break;
 						}
 					}
-					this.showlrcIndex = i - 1;
-					console.log(index);
-					return index;
+					this.showlrcIndex = index;
+					console.log("throttle showlrcIndex", index);
 				}, 500);
 			},
 			
@@ -195,7 +212,7 @@
 				this.animationData = this.animation.export();
 			}, 20 * 1000);
 			
-			console.log("app vue mounted!");
+			console.log("play music page mounted!");
 			this.playMusicById(this.option.id);
 		},
 		created() {
@@ -221,13 +238,14 @@
 				console.log("click center box");
 				this.showLrc = !this.showLrc;
 			},
-			canShowLrc(currentTime, item, index){
-				
-				let { t } = item;
-				let { audioLrc: { ms }} = this;
-				let before = index > 0 ? ms[index-1] : 0;
-				let after = index  < ms.length-1 ? ms[index+1] : ms[ms.length-1];
-				return t <= before.t && t >= after.t;
+			/**
+			 * 打开评论
+			 */
+			openComment(){
+				this.showComment= true;
+				this.$nextTick(()=>{
+					this.$refs.comments.getList({type: 0, id: this.option.id});
+				});
 			},
 		}
 	}

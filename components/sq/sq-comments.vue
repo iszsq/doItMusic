@@ -1,7 +1,7 @@
 <!-- 评论列表 -->
 <template>
 	<view>
-		<view class="c-total">{{formatNumber(total)}}条评论</view>
+		<view class="c-total">热门评论({{formatNumber(total)}})</view>
 		<sq-comment-item 
 			v-for="(item,index) in hotComments" :key="index"
 			:item="item"
@@ -34,13 +34,19 @@
 			/**
 			 * 获取评论数据
 			 * @param type
+			 * 0: 歌曲
+				1: mv
+				2: 歌单
+				3: 专辑
+				4: 电台
+				5: 视频
 			 */
 			getList({id, type, limit}){
-				this.$yunApi.commentHot({
+				this.$api.commentHot({data:{
 					type: type,
 					id: id,
-					limit: limit||20,
-				}).then(({data})=>{
+					limit: limit||30,
+				}}).then(data=>{
 					this.hotComments= data.hotComments;
 					this.total= data.total;
 				});

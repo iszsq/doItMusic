@@ -18,6 +18,11 @@ body{
 	overflow:hidden;
 	text-overflow:ellipsis;
 	line-clamp: 2;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
 }
 .line-3{
 	overflow:hidden;

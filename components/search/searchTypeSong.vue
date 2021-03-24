@@ -110,7 +110,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.cell-group-box{
 		width: auto;
 		box-sizing: border-box;

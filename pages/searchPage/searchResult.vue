@@ -57,7 +57,7 @@
 			<!-- 歌单 搜索结果 -->
 			<swiper-item class="swiper-item">
 				<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="onreachBottom">
-					<searchTypePayList
+					<searchTypePlayList
 						ref="searchPayList"
 						style="margin-bottom: 100rpx;"
 					/>
@@ -75,9 +75,6 @@
 			</swiper-item>
 		</swiper>
 		
-		
-		
-		
 	</view>
 		
 	
@@ -86,14 +83,14 @@
 <script>
 	import searchTypeCom from '@/components/search/searchTypeCom.vue';
 	import searchTypeSong from '@/components/search/searchTypeSong.vue';
-	import searchTypePayList from '@/components/search/searchTypePayList.vue';
+	import searchTypePlayList from '@/components/search/searchTypePlayList.vue';
 	import searchTypeVedio from '@/components/search/searchTypeVedio.vue';
 	
 	export default{
 		components: {
 			searchTypeCom,
 			searchTypeSong,
-			searchTypePayList,
+			searchTypePlayList,
 			searchTypeVedio,
 		},
 		data() {

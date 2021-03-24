@@ -1,9 +1,13 @@
 <template>
 	<!-- 综合搜索结果 -->
 	<view class="search-result-box">
+		
+		<!-- 多重匹配 -->
 		<u-cell-group title="你可能感兴趣" class="cell-group-box" :border="false">
-			<!-- 歌手 -->
-			<u-cell-item :border-bottom="false" :arrow="false" v-for="item in artist">
+			<!-- 歌手列表 -->
+			<u-cell-item :border-bottom="false" :arrow="false" 
+				@tap="openArtist(item.id)"
+				v-for="item in artist">
 				<view slot="icon" style="margin-right: 20rpx;">
 					<u-image width="120rpx" height="120rpx" mode="aspectFill" 
 						shape="circle"
@@ -17,10 +21,9 @@
 			</u-cell-item>
 			
 			<!-- 专辑 -->
-			<u-cell-item :border-bottom="false" :arrow="false" v-for="item in album">
+			<u-cell-item :border-bottom="false" :arrow="false" v-for="item in album" @tap="openPlaylistPage(item.id)">
 				<view slot="icon" style="margin-right: 20rpx;">
 					<u-image width="120rpx" height="120rpx" mode="widthFix" 
-						
 						:src="item.blurPicUrl"></u-image>
 				</view>
 				
@@ -40,7 +43,9 @@
 				
 				<view slot="title">
 					<view style="font-size: 32rpx;color: #000000;">MV：{{item.name}}</view>
-					<view style="font-size: 26rpx;color:#999;">{{item.artistName}},{{item.duration/1000/60}},播放：{{formatNumber(item.playCount)}}</view>
+					<view style="font-size: 26rpx;color:#999;">
+						{{item.artistName}},{{item.duration/1000/60}},播放：{{formatNumber(item.playCount)}}
+					</view>
 				</view>
 			</u-cell-item>
 		</u-cell-group>
@@ -99,7 +104,9 @@
 				
 				<view slot="title">
 					<view style="font-size: 32rpx;color: #000000;" class="only-line-1">{{item.name}}</view>
-					<view style="font-size: 26rpx;color:#999;">{{item.trackCount}}首，by {{item.creator.nickname}}, 播放{{formatNumber(item.playCount)}}次</view>
+					<view style="font-size: 26rpx;color:#999;">
+						{{item.trackCount}}首，by {{item.creator.nickname}}, 播放{{formatNumber(item.playCount)}}次
+					</view>
 				</view>
 				
 			</u-cell-item>

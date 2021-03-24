@@ -8,7 +8,11 @@
 			v-show="result && result.playlists && result.playlists.length > 0"
 		>
 		
-			<u-cell-item :arrow="false" v-for="item in result.playlists">
+			<u-cell-item 
+				:arrow="false" 
+				@tap="openPlaylistPage(item.id, 1)"
+				v-for="item in result.playlists"
+			>
 				<view slot="icon" style="margin-right: 20rpx;">
 					<u-image width="120rpx" height="120rpx" border-radius="10rpx" mode="aspectFill" :src="item.coverImgUrl"></u-image>
 				</view>

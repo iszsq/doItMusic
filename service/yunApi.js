@@ -11,65 +11,133 @@ const api = {};
 
 /**
  * 接口方法定义
- * api文档地址：https://binaryify.github.io/NeteaseCloudMusicApi/#/?id=%e5%ae%89%e8%a3%85
+ * name: 方法名，$api.方法名 进行接口请求
+ * desc：接口解释
+ * url：接口路径
+ * usedLoading：是否使用loading加载提示框，默认true
+ * 网易云 api 文档地址：https://binaryify.github.io/NeteaseCloudMusicApi/#/?id=%e5%ae%89%e8%a3%85
  */
 const apiList = [
 	{
-		name: 'getTopicDetail' ,
 		desc: '获取话题详情' ,
+		name: 'getTopicDetail' ,
 		url: '/topic/detail', 
 	},
 	{
-		name: 'banners' ,
 		desc: '首页广告轮播图' ,
+		name: 'banners' ,
 		url: '/banner', 
 	},
 	{
-		name: 'playlistDetail' ,
+		desc: '网友精选碟歌单' ,
+		name: 'topPlaylist' ,
+		url: '/top/playlist', 
+		usedLoading: false
+	},
+	{
 		desc: '获取歌单详情' ,
+		name: 'playlistDetail' ,
 		url: '/playlist/detail', 
 		usedLoading: false
 	},
 	{
-		name: 'searchDefault' ,
+		desc: '获取专辑详情' ,
+		name: 'album' ,
+		url: '/album', 
+		usedLoading: true
+	},
+	{
 		desc: '默认搜索关键词' ,
+		name: 'searchDefault' ,
 		url: '/search/default', 
 	},
 	{
-		name: 'searchHotDetail' ,
 		desc: '热搜列表(详细)' ,
+		name: 'searchHotDetail' ,
 		url: '/search/hot/detail', 
 		usedLoading: false
 	},
 	{
-		name: 'searchSuggest' ,
 		desc: '搜索建议' ,
+		name: 'searchSuggest' ,
 		url: '/search/suggest', 
 		usedLoading: false
 	},
 	{
-		name: 'searchMultimatch' ,
 		desc: '搜索多重匹配' ,
+		name: 'searchMultimatch' ,
 		url: '/search/multimatch', 
 		usedLoading: true
 	},
 	{
-		name: 'search' ,
 		desc: '搜索' ,
+		name: 'search' ,
 		url: '/search', 
 		usedLoading: true
 	},
 	{
-		name: 'songUrl' ,
 		desc: '获取音乐 url' ,
+		name: 'songUrl' ,
 		url: '/song/url', 
 		usedLoading: true
 	},
 	{
-		name: 'lyric' ,
 		desc: '获取音乐 歌词' ,
+		name: 'lyric' ,
 		url: '/lyric', 
 		usedLoading: true
+	},
+	{
+		desc: '最新mv' ,
+		name: 'mvFirst' ,
+		url: '/mv/first', 
+		usedLoading: true
+	},
+	{
+		desc: '歌手详情' ,
+		name: 'artistDetail' ,
+		url: '/artist/detail', 
+	},
+	{
+		desc: '歌手描述，更全的数据' ,
+		name: 'artistDesc' ,
+		url: '/artist/desc', 
+	},
+	{
+		desc: '相关视频' ,
+		name: 'relatedAllvideo' ,
+		url: '/related/allvideo', 
+		usedLoading: false
+	},
+	{
+		desc: '获取视频播放地址' ,
+		name: 'videoUrl' ,
+		url: '/video/url', 
+		usedLoading: true
+	},
+	{
+		desc: '获取mv播放地址' ,
+		name: 'mvUrl' ,
+		url: '/mv/url', 
+		usedLoading: true
+	},
+	{
+		desc: '获取 mv 数据' ,
+		name: 'mvDetail' ,
+		url: '/mv/detail', 
+		usedLoading: false
+	},
+	{
+		desc: '视频详情' ,
+		name: 'videoDetail' ,
+		url: '/video/detail', 
+		usedLoading: false
+	},
+	{
+		desc: '热门评论' ,
+		name: 'commentHot' ,
+		url: '/comment/hot', 
+		usedLoading: false
 	},
 	
 ];

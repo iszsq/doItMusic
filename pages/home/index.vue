@@ -21,6 +21,33 @@
 			</u-swiper>
 		</view>
 		
+		<!-- 推荐歌单 -->
+		<view class="common-card scroll-x-box">
+			<view class="title-box">
+				<view class="sub-title">热门</view>
+				<view class="title">推荐歌单</view>
+			</view>
+			
+			<view class="m-content">
+				<scroll-view 
+					:scroll-x="true"
+					class="scroll-X" 
+				>
+					<view class="poster-list-item" v-for="(item,index) in topPlaylist" :key="item.id"
+						@tap="openPlaylistPage(item.id, 1)"
+					>
+						<view class="image-box">
+							<u-image width="200rpx" height="200rpx" border-radius="10" :src="item.coverImgUrl+'?param=270y270'" />
+							<view class="dt-count">
+								{{formatNumber(item.playCount)}}
+							</view>
+						</view>
+						<view class="line-2" style="white-space: pre-wrap; word-wrap: break-word;-webkit-line-clamp: 2;">{{item.name}}</view>
+					</view>
+				</scroll-view>
+			</view>
+		</view>
+		
 		<!-- 飙升榜 -->
 		<view class="common-card scroll-x-box">
 			<view class="title-box">
@@ -189,6 +216,8 @@
 			return {
 				//广告轮播图
 				banners: [],
+				//网友精选谍，热门歌单
+				topPlaylist: [],
 				//飙升榜
 				riseSong: [],
 				//电音榜
@@ -242,6 +271,10 @@
 			 * 初始化 热歌风向榜等
 			 */
 			async initToplist(){
+				//精选歌单
+				let topPlaylist = await this.$api.topPlaylist({data:{limit: 6, order: 'hot'}});
+				this.topPlaylist= topPlaylist.playlists;
+				
 				//飙升榜
 				let riseSongDetail = await this.$api.playlistDetail({data: {id: 19723756}});
 				this.riseSong= riseSongDetail.playlist.tracks.slice(0,6);

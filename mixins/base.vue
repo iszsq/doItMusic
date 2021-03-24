@@ -12,8 +12,7 @@
 	export default{
 		data(){
 			return {
-				//显示第几行歌词
-				//showlrcIndex: 0,
+				
 			};
 		} ,
 		computed: {
@@ -34,8 +33,6 @@
 				let i = ((buffered/duration) * 100).toFixed(2);
 				return i;
 			},
-			
-			
 		},
 		watch: {
 			'audioMeta.currentTime': function(val){
@@ -44,6 +41,19 @@
 		},
 		created(){
 			
+		},
+		/**
+		 * 监听返回事件触发，不一定全平台有效，有兼容性问题
+		 * @param {Object} e
+		 * @return {bool} 返回true表示阻止事件，取消返回
+		 */
+		onBackPress(e) {
+			console.log('onBackPress', e);
+			if (this.showComment===true) {
+				//关闭评论窗口，取消返回
+				this.showComment = false;
+				return true;
+			}
 		},
 		methods: {
 			...mapMutations({
@@ -120,12 +130,14 @@
 					id: paramId
 				}}).then(data => {
 					let songs = data.data || [];
-					if (songs.length > 0 && songs[0].url) {
+					if (songs.length > 0 && songs[0].url ) {
 						//播放音乐
 						this.playMusicByUrl(songs[0].url);
 					} else {
-						uni.showToast({
-							title: '无法获取该歌曲的播放地址'
+						uni.showModal({
+						    title: '失败',
+						    content: '无法获取该歌曲的播放地址，应该是没版权~',
+						    
 						});
 					}
 					
@@ -182,7 +194,6 @@
 					audioCtx.pause();
 				}
 			},
-			
 			/**
 			 * 转成分钟
 			 */
@@ -197,6 +208,57 @@
 				let i = parseInt(num%60);
 				return i < 10 ? '0' + i : i;
 			},
+			/**
+			 * 打开歌手主页页面
+			 */
+			openArtist(id){
+				if(!id){
+					return;
+				}
+				uni.navigateTo({
+					url: '/pages/artistPage/artistPage?id=' + id,
+				});
+			},
+			/**
+			 * 打开歌单页面
+			 * type: 1-歌单
+			 * 		 2-专辑（默认）
+			 */
+			openPlaylistPage(id, type=2){
+				uni.navigateTo({
+					url: `/pages/playlistPage/playlistPage?id=${id}&type=${type}`,
+				});
+			},
+			/**
+			 * 开发中小提示
+			 */
+			showDevToast(){
+				uni.showToast({
+					title: '还没有时间做~',
+				});
+			},
+			/**
+			 * 显示普通的toast提示
+			 * @param {Object} msg 
+			 */
+			showNoneToast(msg){
+				uni.showToast({
+					title: msg,
+					icon: 'none',
+				})
+			},
+			/**
+			 * 视频播放页面
+			 * type: 1-mv
+			 * 		 2-普通视频（默认）
+			 */
+			openPlayVideoPage(id, type=2){
+				console.log('openPlayVideoPage', id,type);
+				uni.navigateTo({
+					url: `/pages/playVideoPage/playVideoPage?id=${id}&type=${type}`,
+				});
+			},
+			
 		},
 	}
 </script>
