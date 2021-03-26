@@ -1,0 +1,192 @@
+body{
+	font-family: PingFang SC,Arial,Microsoft YaHei,sans-serif;
+}
+
+.primary-color{
+	color: #e51419;
+}
+.primary-bg-color{
+	background-color: #e51419;
+}
+
+.line-1{
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.line-2{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	line-clamp: 2;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+.line-3{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	line-clamp: 3;
+}
+.line-4{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	line-clamp: 4;
+}
+
+/* flex */
+
+.flex-layout {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sq-icon{
+	width: 25px;
+	height: 25px;
+}
+
+.icon-index{
+	z-index: 999;
+}
+
+.center-box{
+	display: flex;
+	align-items: center;
+}
+
+.flex{
+	display: flex;
+	flex-direction: row;
+}
+
+/* 全屏垂直滚动样式 */
+.vertical-roll-box{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.vertical-roll-box .swiper{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.vertical-roll-box .swiper-item{
+	width: 100%;
+	height: 100%;
+}
+.vertical-roll-box .swiper-item .item-full-bg{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+.vertical-roll-box .swiper-item .item-full-bg .bg-image{
+	width: 100%;
+	height: 100%;
+}
+/* 全屏垂直滚动样式 end */
+
+/* 模糊背景 */
+.fuzzy-bg{
+	filter: blur(5px);
+}
+
+.avatar{
+	border-radius: 50%;
+}
+.avatar.midle-size{
+	width: 60rpx;
+	height: 60rpx;
+}
+
+/* 360度旋转 */
+.animation-round{
+	animation: m-round 2s linear infinite;
+}
+@keyframes m-round{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+
+/* test */
+.pc-env,.pc-env>*{
+	display: none;
+}
+.not-pc-env,.not-pc-env>*{
+	display: block;
+}
+@media screen and (min-width:1025px) {
+	.pc-env,.pc-env>*{
+		display: block;
+	}
+	
+	.not-pc-env,.not-pc-env>*{
+		display: none;
+	}
+}
+
+
+/*
+* =========动画
+**/
+/* 列表滚动动画 */
+.rollList-enter{
+	opacity: 0;
+	transform: translateY(80px);
+}
+.rollList-leave-to{
+	opacity: 0;
+	transform: scale(0) translateY(-60px);
+}
+
+.rollList-enter-active{
+	transition: all .8s ease;
+}
+.rollList-leave-active{
+	opacity: .3;
+	transition: all 1.5s ease;
+}
+
+/*移动的元素会带有v-move，配合v-leave-active使用*/
+.rollList-move{
+	transition: all .8s ease;
+}
+.rollList-leave-active{
+	position: absolute;
+}
+
+
