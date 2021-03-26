@@ -21,7 +21,8 @@
 			 * 音频播放百分比
 			 */
 			audioPlayPerc(){
-				let {currentTime, duration} = this.audioMeta;
+				let {currentTime=0, duration=0} = this.audioMeta;
+				
 				let i = ((currentTime/duration) * 100).toFixed(2);
 				return i;
 			},
@@ -29,15 +30,13 @@
 			 * 音频缓存百分比
 			 */
 			audioBuffedPerc(){
-				let {buffered, duration} = this.audioMeta;
+				let {buffered=0, duration=0} = this.audioMeta;
 				let i = ((buffered/duration) * 100).toFixed(2);
 				return i;
 			},
 		},
 		watch: {
-			'audioMeta.currentTime': function(val){
-				
-			},
+			
 		},
 		created(){
 			
@@ -107,9 +106,13 @@
 			openMp3(params={}){
 				console.log('-----openMp3', params);
 				let { id, picUrl, name } = params;
-				this.setAudioId(id);
-				this.setAudioTitle(name);
-				this.setPicUrl(picUrl);
+				let { audioId, audioMeta } = this;
+				if( id != audioId || audioMeta.paused ){
+					// this.setAudioId(id);
+					this.setAudioTitle(name);
+					this.setPicUrl(picUrl);
+				}
+				
 				uni.navigateTo({
 					url: '/pages/playMusicPage/playMusicPage?id=' + id,
 				});
@@ -120,7 +123,7 @@
 			 */
 			playMusicById(paramId){
 				let { audioId, audioMeta } = this;
-				if(paramId === audioId && audioMeta.paused === false){
+				if(paramId == audioId && audioMeta.paused === false){
 					return;
 				}
 				this.setAudioId(paramId);
@@ -197,14 +200,15 @@
 			/**
 			 * 转成分钟
 			 */
-			parseMinute(num){
+			parseMinute(num=0){
+				num < 0 ? 0 : num;
 				let i = parseInt(num/60);
 				return i < 10 ? '0' + i : i; 
 			},
 			/**
 			 * 转成秒
 			 */
-			parseSecond(num){
+			parseSecond(num=0){
 				let i = parseInt(num%60);
 				return i < 10 ? '0' + i : i;
 			},

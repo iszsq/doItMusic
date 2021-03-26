@@ -12,11 +12,14 @@
 		<view class="bg-pic-box">
 			<image class="img-bg" width="100%" height="100%" mode="aspectFill" :src="detail.picUrl"/>
 			<view class="pic-box-content">
-				<u-image
-					border-radius="20"
-					class="img-pic" width="220rpx" height="220rpx"
-					 mode="widthFix" 
-					:src="detail.picUrl"/>
+				<view style="width:220rpx;height: 220rpx; z-index: 999;margin-right: 20rpx;">
+					<u-image
+						border-radius="20"
+						class="img-pic" width="220rpx" height="220rpx"
+						mode="widthFix" 
+						:src="detail.picUrl"/>
+				</view>
+				
 				
 				<!-- 右边信息 -->
 				<view class="pic-box-content-info">
@@ -53,20 +56,27 @@
 		<view class="name-card-box" @tap="showDevToast">
 			<view>
 				<u-row>
-					<u-col :span="4" class="name-card-item">
-						<u-icon name="bag" size="40"/>
-						<view style="margin-left: 10rpx;">{{detail.mark}}</view>
+					<u-col :span="4" >
+						<view class="name-card-item">
+							<u-icon name="bag" size="40"/>
+							<view style="margin-left: 10rpx;">{{detail.mark}}</view>
+						</view>
 					</u-col>
 					
-					<u-col :span="4" class="name-card-item" @tap="openComment">
-						<u-icon name="chat" size="40"/>
-						<view style="margin-left: 10rpx;">{{detail.info.commentCount}}</view>
+					<u-col :span="4"  >
+						<view class="name-card-item" @tap="openComment">
+							<u-icon name="chat" size="40"/>
+							<view style="margin-left: 10rpx;">{{detail.info.commentCount}}</view>
+						</view>
+						
 					</u-col>
 					</u-col>
 					
-					<u-col :span="4" class="name-card-item">
-						<u-icon name="share" size="40"/>
-						<view style="margin-left: 10rpx;">{{detail.info.shareCount}}</view>
+					<u-col :span="4" >
+						<view class="name-card-item">
+							<u-icon name="share" size="40"/>
+							<view style="margin-left: 10rpx;">{{detail.info.shareCount}}</view>
+						</view>
 					</u-col>
 				</u-row>
 			</view>
@@ -78,11 +88,8 @@
 			<u-cell-group 
 				:border="false"
 				class="cell-group-box"
-				v-show="songs && songs.length > 0"
 			>
-			
 				<u-cell-item 
-					
 					title-width="600" 
 					:arrow="false" v-for="item in songs" 
 				>
@@ -162,7 +169,6 @@
 			this.getPlaylistDesc();
 		},
 		created() {
-			
 		},
 		methods: {
 			/**
@@ -245,8 +251,8 @@
 	
 	.bg-pic-box{
 		position: relative;
+		height: 500rpx;
 		padding: 140rpx 40rpx 100rpx 40rpx;
-		
 	}
 	.bg-pic-box .img-bg{
 		width: 100%;
@@ -266,23 +272,22 @@
 		z-index: 100;
 	}
 	
-	.pic-box-content{
+	.pic-box-content {
 		width: 100%;
 		height: 100%;
+		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
 		z-index: 120;
-		display: flex;
-		flex-direction: row;
 		align-items: center;
 	}
 	
 	.pic-box-content-info{
-		width: 0;
+		width: 0rpx;
 		flex: 1;
 		z-index: 120;
 		color: #fff;
-		margin-left: 40rpx;
+		/* margin-left: 40rpx; */
 	}
 	
 	/* 卡片 */

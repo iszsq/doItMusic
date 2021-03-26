@@ -23,7 +23,7 @@
 			<view class="center-box" @tap.stop="onClickCenterBox">
 				
 				<!-- 旋转图片 -->
-				<view class="pic-box" v-show="!showLrc">
+				<view class="pic-box" :style="{'display': showLrc?'none':'flex'}">
 					<view class="pic-img-wrapper">
 						<image
 							:animation="animationData"
@@ -39,7 +39,7 @@
 				<!-- 歌词 -->
 				<view 
 					style="width: 100%;height: 100%;"
-					v-show="showLrc" 
+					:style="{'display': !showLrc?'none':'block'}"
 					@tap.stop="onClickCenterBox">
 					
 					<scroll-view 
@@ -149,15 +149,7 @@
 		computed: {
 			...mapState(['audioId', 'audioTitle', 'picUrl', 'audioMeta']),
 			...mapGetters(['audioPageBg']),
-			currentTime() {
-				console.log('hello', this.audioMeta.currentTime);
-				let audioMeta = this.audioMeta;
-				this.$u.throttle(() => {
-					console.log(index);
-				}, 500);
-				
-				return audioMeta.currentTime;
-			},
+			
 		},
 		watch: {
 			audioMeta(newVal){
@@ -165,21 +157,20 @@
 				if(!this.audioLrc.ms){
 					return;
 				}
-				this.$u.throttle(() => {
-					let ms = this.audioLrc.ms;
-					let {currentTime} = newVal;
-					
-					let index = this.showlrcIndex;
-					for (let i=0, len = ms.length; i < len; i++) { 
-						let item = ms[i];
-						if (item.t  >= currentTime) {
-							index = i - 1;
-							break;
-						}
+				let ms = this.audioLrc.ms;
+				let {currentTime} = newVal;
+				
+				let index = this.showlrcIndex;
+				for (let i=0, len = ms.length; i < len; i++) { 
+					let item = ms[i];
+					if (item.t  >= currentTime) {
+						index = i - 1;
+						break;
 					}
-					this.showlrcIndex = index;
-					console.log("throttle showlrcIndex", index);
-				}, 500);
+				}
+				this.showlrcIndex = index;
+				
+				
 			},
 			
 		},

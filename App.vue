@@ -8,7 +8,8 @@
 			console.log('App Launch');
 			//初始化音频上下文
 			let audioCtx = null;
-			if (getApp().globalData.audioCtx == null) {
+			let globalData = this.$options.globalData;
+			if (globalData.audioCtx == null) {
 				audioCtx = uni.createInnerAudioContext();
 				audioCtx.autoplay = true;
 				
@@ -54,7 +55,8 @@
 					this.setAudioMetaInner(audioCtx);
 				});
 				
-				getApp().globalData.audioCtx = audioCtx;
+				globalData.audioCtx = audioCtx;
+				this.$options.globalData = globalData;
 			} 
 		},
 		onShow: function() {
@@ -74,13 +76,16 @@
 			 * @param {Object} audioCtx
 			 */
 			setAudioMetaInner(audioCtx){
-				let audM = {};
-				audM.volume = audioCtx.volume;
-				audM.buffered = audioCtx.buffered;
-				audM.duration = audioCtx.duration;
-				audM.currentTime = audioCtx.currentTime;
-				audM.paused = audioCtx.paused;
-				this.$store.commit('setAudioMeta', audM);
+				this.$u.throttle(()=>{
+					console.log("setAudioMetaInner")
+					let audM = {};
+					audM.volume = audioCtx.volume;
+					audM.buffered = audioCtx.buffered;
+					audM.duration = audioCtx.duration;
+					audM.currentTime = audioCtx.currentTime;
+					audM.paused = audioCtx.paused;
+					this.$store.commit('setAudioMeta', audM);
+				}, 800);
 			},
 		},
 	}
@@ -96,6 +101,8 @@
 	@import '/static/css/styles.css';
 	/* #endif */
 	
+	
+	
 	:root{
 		--title-bar-height: 120rpx;
 		--primary-color: #e51419;
@@ -110,6 +117,11 @@
 	      height: var(--status-bar-height);
 	      width: 100%;
 	  }
+	/* #endif */
+	
+	/* #ifdef H5*/
+		body{
+		}
 	/* #endif */
 	
 	
@@ -144,12 +156,4 @@
 	}
 	
 	
-	@keyframe imgRotate() {
-		from {
-			transform: rotate(0);
-		}
-		to {
-			transform: rotate(360deg);
-		}
-	}
 </style>

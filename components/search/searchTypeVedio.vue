@@ -3,49 +3,25 @@
 	<view class="search-result-box">
 		<!-- 视频 -->
 		
-		<u-waterfall v-model="result.videos" v-show="result && result.videos && result.videos.length > 0">
-			<template v-slot:left="{leftList}">
-				<view 
-					class="video-item-box"
-					v-for="(item, index) in leftList" 
-					:key="index"
-				>
-					<u-image class="v-image" mode="aspectFill" border-radius="15rpx 15rpx 0 0"
-						height="400rpx"
-							:src="item.coverUrl">
-					</u-image>
-					<!-- 信息 -->
-					<view style="background-color: #fff; border-radius: 0 0 15rpx 15rpx; padding: 15rpx;">
-						<view style="margin-bottom: 12rpx; font-size: 32rpx;font-weight: bold;">
-							{{item.creator ? item.creator[0].userName : ''}} - {{item.title}}
-						</view>
-						<view style="font-size: 22rpx;">
-							<u-icon name="play-right"/>{{formatNumber(item.playTime)}}
-						</view>
-					</view>
+		<view
+			v-for="(item, index) in result.videos" 
+			class="video-item-box"
+			@click="openPlayVideoPage(item.vid, item.type+1)"
+			:key="index"
+		>
+			<u-image class="v-image" width="100%" mode="widthFix" border-radius="15rpx 15rpx 0 0"
+					:src="item.coverUrl">
+			</u-image>
+			<!-- 信息 -->
+			<view style="background-color: #fff; border-radius: 0 0 15rpx 15rpx; padding: 15rpx;">
+				<view style="margin-bottom: 12rpx; font-size: 32rpx;font-weight: bold;">
+					{{item.creator ? item.creator[0].userName : ''}} - {{item.title}}
 				</view>
-			</template>
-			<template v-slot:right="{rightList}">
-				<view 
-					class="video-item-box"
-					v-for="(item, index) in rightList" 
-					:key="index"
-				>
-					<u-image class="v-image" mode="aspectFill" height="400rpx" border-radius="15rpx 15rpx 0 0"
-							:src="item.coverUrl">
-					</u-image>
-					<!-- 信息 -->
-					<view style="background-color: #fff; border-radius: 0 0 15rpx 15rpx; padding: 15rpx;">
-						<view style="margin-bottom: 12rpx; font-size: 32rpx;font-weight: bold;">
-							{{item.creator ? item.creator[0].userName : ''}} - {{item.title}}
-						</view>
-						<view style="font-size: 22rpx;">
-							<u-icon name="play-right"/>{{formatNumber(item.playTime)}}
-						</view>
-					</view>
+				<view style="font-size: 22rpx;">
+					<u-icon name="play-right"/>{{formatNumber(item.playTime)}}
 				</view>
-			</template>
-		</u-waterfall>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -123,8 +99,7 @@
 	.video-item-box{
 		width: auto;
 		height: auto;
-		width: 100%;
-		padding: 10rpx;
+		margin: 20rpx;
 		box-sizing: border-box;
 		border-radius: 15rpx 15rpx 0 0;
 		position: relative;
@@ -132,7 +107,6 @@
 	
 	.video-item-box .v-image{
 		width: 100%;
-		height: 500rpx;
 		display: block;
 	}
 </style>

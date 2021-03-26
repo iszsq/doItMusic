@@ -47,8 +47,8 @@
 						v-if="item.url"
 						:src="item.url.url"
 						:poste="item.coverUrl"
-						style="width: 100%; height: 100%;"
 						loop
+						:show-loading="false"
 						:autoplay="false"
 						objectFit="contain"
 						:enable-progress-gesture="false"
@@ -61,16 +61,15 @@
 						@timeupdate="onUpdateTime"
 						@pause="onPause"
 						@controlstoggle="controlstoggle"
-						t7-video-player-type="inline"
-						webkit-playsinline="true"  
-						playsinline="false"  
-						x-webkit-airplay="true"
-						x5-playsinline="showLine"
+						
+						webkit-playsinline playsinline x5-playsinline x-webkit-airplay='allow' 
+						x5-video-player-type='h5' x5-video-orientation='portraint' x5-video-player-fullscreen=''
+						
 						:controls="false">
 					</video>
 					
 					<!-- 内容区 -->
-					<view class="controls-box" >
+					<view class="controls-box">
 						<view class="top-info">
 							<view class="detail-box">
 								<!-- 作者 -->
@@ -86,19 +85,19 @@
 								<u-icon :size="60" 
 									@tap="showDevToast"
 									class="o-icon" label-color="#ffffff" 
-									:label="item.subCount" name="thumb-up-fill" label-pos="bottom"
+									:label="item.subCount||''" name="thumb-up-fill" label-pos="bottom"
 								/>
 								
 								<u-icon :size="60" class="o-icon" label-color="#ffffff" 
 									@tap="openComment"
-									:label="item.commentCount" 
+									:label="item.commentCount||''" 
 									name="chat-fill" label-pos="bottom"
 								/>
 								
-								<u-icon :size="80" class="o-icon" label-color="#ffffff" 
+								<!-- <u-icon :size="80" class="o-icon" label-color="#ffffff" 
 									:label="item.shareCount" name="share-fill"  
 									label-pos="bottom" 
-								/>
+								/> -->
 							</view>
 						</view>
 						
@@ -119,6 +118,7 @@
 			mode="bottom"
 			border-radius="10"
 			height="800rpx"
+			style="z-index: 999;"
 		>
 			<sq-comments ref="comments"/>
 		</u-popup>
@@ -173,6 +173,9 @@
 			// this.getRelatedAllvideo();
 			
 		},
+		onBackPress() {
+			this.pause();
+		},
 		methods: {
 			/**
 			 * 获取视频或mv数据
@@ -182,25 +185,17 @@
 				//2--视频
 				if (type == 2) {
 					this.$api.videoDetail({data: {id: id}}).then(data => {
-						
-					}).catch(()=>{
-						//加载相关视频
-						this.getRelatedAllvideo(id);
-					});
-				} else {
-					//1-mv
-					this.$api.mvDetail({data: {mvid: id}}).then(data => {
-						let mvData = data.data;
-						let videoData ={
-							vid: mvData.id,
-							title: mvData.name,
-							videoType: 1,
-							coverUrl: mvData.cover,
-							shareCount: mvData.shareCount,
-							commentCount: mvData.commentCount,
-							subCount: mvData.subCount,
-							creator: [{userName: mvData.artistName}],
-						} ;
+						let vdData = data.data;
+						let videoData = {
+							vid: vdData.vid,
+							title: vdData.title,
+							videoType: 2,
+							coverUrl: vdData.coverUrl,
+							shareCount: vdData.shareCount,
+							commentCount: vdData.commentCount,
+							subCount: vdData.subCount,
+							creator: [{userName: vdData.creator.nickname}],
+						};
 						this.list.push(videoData);
 						this.doPlay(this.current);
 						
@@ -209,6 +204,29 @@
 					}).catch(()=>{
 						//加载相关视频
 						this.getRelatedAllvideo(id);
+					});
+				} else {
+					//1-mv
+					this.$api.mvDetail({data: {mvid: id}}).then(data => {
+						let mvData = data.data;
+						let videoData = {
+							vid: mvData.id,
+							title: mvData.name,
+							videoType: 1,
+							coverUrl: mvData.cover,
+							shareCount: mvData.shareCount,
+							commentCount: mvData.commentCount,
+							subCount: mvData.subCount,
+							creator: [{userName: mvData.artistName}],
+						};
+						this.list.push(videoData);
+						this.doPlay(this.current);
+						
+						//加载相关视频
+						this.getRelatedAllvideo(id);
+					}).catch(()=>{
+						//加载相关视频
+						// this.getRelatedAllvideo(id);
 					});
 				}
 			},
@@ -224,6 +242,11 @@
 				console.log('------onChange current', current);
 				this.current = current;
 				this.doPlay(current);
+				
+				let {list} = this;
+				if (current == (list.length-1)) {
+					this.getRelatedAllvideo(list[list.length-1].vid);
+				}
 			},
 			/**
 			 *  获取相关视频
@@ -338,6 +361,7 @@
 				let item = this.list[index];
 				item.playing = true;
 				this.$set(this.list, index, item);
+				
 			},
 			/**
 			 * 进度更新
@@ -493,8 +517,10 @@
 	}
 	
 	.m-video{
-		width: 750rpx;
-		height: 422rpx;
+		width: 100%;
+		//#ifdef MP
+		height: 100%;
+		//#endif
 	}
 	
 	/**
@@ -508,7 +534,7 @@
 		bottom: 0;
 		color: #fff;
 		padding: 30rpx 20rpx;
-		z-index: 999;
+		z-index: 9999;
 	}
 	
 	.controls-box .top-info{

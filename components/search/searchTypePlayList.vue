@@ -5,12 +5,11 @@
 		<u-cell-group
 			:border="false"
 			class="cell-group-box"
-			v-show="result && result.playlists && result.playlists.length > 0"
 		>
 		
 			<u-cell-item 
 				:arrow="false" 
-				@tap="openPlaylistPage(item.id, 1)"
+				@click="openPlaylistPage(item.id, 1)"
 				v-for="item in result.playlists"
 			>
 				<view slot="icon" style="margin-right: 20rpx;">

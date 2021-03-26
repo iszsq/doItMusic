@@ -97,7 +97,9 @@
 				歌单
 			</view>
 		
-			<u-cell-item :arrow="false" v-for="item in searchResultCom.playList.playLists">
+			<u-cell-item 
+				@click="openPlaylistPage(item.id, 1)"
+				:arrow="false" v-for="item in searchResultCom.playList.playLists">
 				<view slot="icon" style="margin-right: 20rpx;">
 					<u-image width="120rpx" height="120rpx" border-radius="10rpx" mode="aspectFill" :src="item.coverImgUrl"></u-image>
 				</view>
@@ -131,7 +133,9 @@
 				视频
 			</view>
 		
-			<u-cell-item :arrow="false" v-for="item in searchResultCom.video.videos">
+			<u-cell-item 
+				@click="openPlayVideoPage(item.vid, item.type+1)"
+				:arrow="false" v-for="item in searchResultCom.video.videos">
 				<view slot="icon" style="margin-right: 20rpx;">
 					<u-image width="180rpx" height="120rpx" border-radius="10rpx" mode="aspectFill" :src="item.coverUrl"></u-image>
 				</view>

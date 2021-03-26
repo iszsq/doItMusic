@@ -129,6 +129,7 @@
 	}
 	
 	.artist-pic-box{
+		width: 100%;
 		position: relative;
 	}
 	

@@ -32,25 +32,27 @@
 					热搜榜
 				</view>
 				<view slot="right-icon">
-					<u-button :plain="true" shape="circle" size="mini">
+					<!-- <u-button :plain="true" shape="circle" size="mini">
 						<u-icon name="play-circle-fill"></u-icon>播放
-					</u-button>
+					</u-button> -->
 				</view>
 			</u-cell-item>
 			
 			<u-divider></u-divider>
 				
 			<view class="hot-item-box">
-				<u-row gutter="16" justify="bewteen" style="width: auto;overflow: hidden;">
+				<u-row gutter="16" justify="bewteen" style="width: 100%;overflow: hidden;">
 					<u-col 
-						span="6" 
+						:span="6" 
 						v-for="(item,index) in hotList" 
 						@click="onClickSearch(item.searchWord)"
 					>
 						<view class="hot-item" >
 							<view class="number" :class="{'red-text': index<3}"> {{index+1}}</view>
-							<view class="word" :class="{'text-bolder': index<3}"> {{item.searchWord}}</view>
-							<image v-if="item.iconUrl" style="margin-left: 15rpx;width: 30rpx;" mode="widthFix" :src="item.iconUrl"></image>
+							<view class="word line-1" :class="{'text-bolder': index<3}"> {{item.searchWord}}</view>
+							<image v-show="item.iconUrl" 
+								style="margin-left: 15rpx;width: 30rpx;max-height: 40rpx;" mode="widthFix":src="item.iconUrl">
+							</image>
 						</view>
 					</u-col>
 				</u-row>
@@ -164,7 +166,9 @@
 	.hot-item-box .hot-item {
 		margin-bottom: 30rpx;
 		display: flex;
+		flex-direction: row;
 		flex-wrap: nowrap;
+		align-items: center;
 	}
 	
 	.hot-item-box .hot-item .number{

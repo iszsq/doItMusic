@@ -10,7 +10,7 @@
 		<view class="mv-list-box">
 			<u-card 
 				:border="false"
-				@tap="openPlayVideoPage(item.id, 1)"
+				@click="openPlayVideoPage(item.id, 1)"
 				v-for="item in mvList"
 				margin="0 0 20rpx 0"
 				border-radius="0"

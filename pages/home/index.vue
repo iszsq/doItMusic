@@ -34,7 +34,7 @@
 					class="scroll-X" 
 				>
 					<view class="poster-list-item" v-for="(item,index) in topPlaylist" :key="item.id"
-						@tap="openPlaylistPage(item.id, 1)"
+						@click="openPlaylistPage(item.id, 1)"
 					>
 						<view class="image-box">
 							<u-image width="200rpx" height="200rpx" border-radius="10" :src="item.coverImgUrl+'?param=270y270'" />
